@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-<title>juego educativo </title>
-</head>
+  <head>
+    <title>juego educativo </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
 <body>
-<h1>Bienvenidos a este juego</h1>
+  <h1>Bienvenidos</h1>
+  <p>Antes de comenzar con el juego registre los siguientes datos</p>
+  <form action="game.html" method="post">
+      <div class="form-group">
+        <label for="nick">Nickname</label>
+        <br>
+        <input id="nick" type="text" name="nickname">
+      </div>
+      <button type="submit" name="btn" class="btn btn-primary">Comenzar</button>
+  </form>
+
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
-
