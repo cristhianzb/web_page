@@ -2,29 +2,6 @@
 //los 10 significan muro
 //los 1 significa ya recorrido
 
-
-var tablero = generarMatriz(10,10);
-llenarMatriz(tablero,1);
-
-var linea = [1,2,3,4,5];
-//print(tablero);
-//var instrucciones =[1,2,1,2,1];//ok nivel1
-//var instrucciones =[1,2,1];//ok nivel2
-
-var instrucciones = [1,1,2,3,0,1,2,2,1];//nivel4 ok
-//var instrucciones =[];
-var ruta = recorrer(instrucciones, nivel4,1,0,9,9);
-//print(ruta[10].pf+" "+ruta[10].pc);
-print(printMyMatrix(nivel4));
-//var prueba=[];
-//var elem = prueba.shift();
-//print(elem);
-
-
-
-
-
-
 //crea una matriz dadas las filas y columnas
 function generarMatriz(fil,col){
     var matriz = new Array(fil);
@@ -199,4 +176,15 @@ function seMueve(fil,col,matriz,lim){
     }
   }
   return ans;
+}
+
+
+function Laberinto(matriz,lim,canvas,nivel) {
+  this.matriz=matriz;
+  this.lim=lim;
+  this.canvas=canvas;
+  this.nivel=nivel;
+  this.getNivel=function(){
+    return "el nivel es "+nivel;
+  };
 }

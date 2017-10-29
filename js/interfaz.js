@@ -16,7 +16,7 @@ function generarLaberinto(matriz,id){
 */
 
 
-function generarLaberinto(matriz,canvas){
+function generarLaberinto2(matriz,canvas){
   var canvas = document.getElementById(canvas);
   var ctx = canvas.getContext("2d");
   var fil=matriz.length;
@@ -34,9 +34,38 @@ function generarLaberinto(matriz,canvas){
         ctx.fillStyle='rgb(255,255,255)';
         ctx.fillRect(c,f,ancho,alto);
       }
-      console.log(c+" , "+f);
       c=c+ancho;
     }
     f=f+alto;
   }
+}
+
+
+function GraficaLaberinto(matriz,canvas){
+  this.matriz=matriz;
+  this.fil=matriz.length;
+  this.col=matriz[0].length;
+  this.canvas=canvas;
+  this.ctx =canvas.getContext("2d");
+  this.des = 5;
+  this.anchoc = (canvas.width/this.col)-this.des;
+  this.altoc = (canvas.height/this.fil)-this.des;
+
+  this.generarLaberinto=function(){
+    var f = 0;
+    for (var i = 0; i < this.fil; i++) {
+      f=f+this.des;
+      var c = 0;
+      for (var j = 0; j <this.col; j++) {
+        c=c+this.des;
+        if(this.matriz[i][j]==0){
+          this.ctx.fillStyle='rgb(255,255,255)';
+          this.ctx.fillRect(c,f,this.anchoc,this.altoc);
+        }
+        c=c+this.anchoc;
+      }
+      f=f+this.altoc;
+    }
+  }
+
 }
