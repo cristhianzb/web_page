@@ -1,13 +1,16 @@
 //funciones de la pagina Game
-var lab = new GraficaLaberinto(nivel4,document.getElementById("canvas"),[{x:1,y:1},{x:2,y:2}]);
+var lab = new GraficaLaberinto(copiarMatriz(nivel4),document.getElementById("canvas"),[{x:1,y:1},{x:2,y:2}]);
+var recorrido =recorrer([1,1,2,2,1], nivel4,1,0,9,9);
 lab.generarLaberinto();
-console.log(lab.sigPaso().x);
-console.log(lab.sigPaso().y);
-lab.dibCirculo(50,50,10,'rgb(255,0,0)');
 
 
+function mover() {
+  var p = lab.sigPaso();
+  lab.dibCirculo(p.x,p.y,10,'rgb(255,0,0)');
+}
 
-//setInterval();
+
+setInterval(mover,5000);
 
 
 

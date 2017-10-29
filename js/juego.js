@@ -11,6 +11,16 @@ function generarMatriz(fil,col){
     return matriz;
 }
 
+function copiarMatriz(matriz){
+  var copia = generarMatriz(matriz.length,matriz[0].length);
+  for (var i = 0; i < copia.length; i++) {
+    for (var j = 0; j < copia[0].length; j++) {
+      copia[i][j]=matriz[i][j];
+    }
+  }
+  return copia;
+}
+
 //imprime en el id printer
 function print(string){
   document.getElementById("printer").innerHTML=string;

@@ -73,8 +73,8 @@ function GraficaLaberinto(matriz,canvas,recorrido){
     var point = {x:0,y:0};
     if(this.recorrido.length>0){
       point = this.recorrido.shift();
-      var px = (point.x*this.anchoc)+this.anchoc/2;
-      var py = (point.y*this.altoc)+this.altoc/2;
+      var px = (point.x*this.anchoc+this.des)+this.anchoc/2;
+      var py = (point.y*this.altoc+this.des)+this.altoc/2;
       point.x=px;
       point.y=py;
     }
