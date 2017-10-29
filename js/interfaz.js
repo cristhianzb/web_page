@@ -41,7 +41,8 @@ function generarLaberinto2(matriz,canvas){
 }
 
 
-function GraficaLaberinto(matriz,canvas){
+function GraficaLaberinto(matriz,canvas,recorrido){
+  this.recorrido=recorrido;
   this.matriz=matriz;
   this.fil=matriz.length;
   this.col=matriz[0].length;
@@ -58,7 +59,7 @@ function GraficaLaberinto(matriz,canvas){
       var c = 0;
       for (var j = 0; j <this.col; j++) {
         c=c+this.des;
-        if(this.matriz[i][j]==0){
+        if(this.matriz[i][j]==0 ||this.matriz[i][j]==-1 ){
           this.ctx.fillStyle='rgb(255,255,255)';
           this.ctx.fillRect(c,f,this.anchoc,this.altoc);
         }
@@ -66,6 +67,27 @@ function GraficaLaberinto(matriz,canvas){
       }
       f=f+this.altoc;
     }
-  }
+  };
+
+  this.sigPaso=function(){
+    var point = {x:0,y:0};
+    if(this.recorrido.length>0){
+      point = this.recorrido.shift();
+      var px = (point.x*this.anchoc)+this.anchoc/2;
+      var py = (point.y*this.altoc)+this.altoc/2;
+      point.x=px;
+      point.y=py;
+    }
+    return point;
+  };
+
+  this.dibCirculo = function(x,y,radio,color){
+    this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    this.generarLaberinto();
+    this.ctx.fillStyle = color;
+    this.ctx.arc(x,y,radio,0,2*Math.PI,false);
+    this.ctx.stroke();
+  };
+
 
 }

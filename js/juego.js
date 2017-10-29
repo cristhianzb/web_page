@@ -80,7 +80,7 @@ function recorrer(inst, matriz,fil,col,ffil,fcol){
   if(inst.length>0){
     var sa= inst.shift();
     while(esValido(fil,col,matriz,lim)&&inst.length>=0 && !(fil==ffil && col==fcol)){
-      recorrido.push({pf:fil,pc:col});
+      recorrido.push({y:fil,x:col});
       if(matriz[fil][col]==-1){
         //decidir
         sa= inst.shift();

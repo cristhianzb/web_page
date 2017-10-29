@@ -1,7 +1,13 @@
 //funciones de la pagina Game
-var lab = new GraficaLaberinto(nivel1,document.getElementById("canvas"));
-console.log(lab.anchoc);
+var lab = new GraficaLaberinto(nivel4,document.getElementById("canvas"),[{x:1,y:1},{x:2,y:2}]);
 lab.generarLaberinto();
+console.log(lab.sigPaso().x);
+console.log(lab.sigPaso().y);
+lab.dibCirculo(50,50,10,'rgb(255,0,0)');
+
+
+
+//setInterval();
 
 
 
