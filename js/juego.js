@@ -91,14 +91,14 @@ function recorrer(inst, matriz,fil,col){
   var up,right,down,left;
   if(inst.length>0){
     sa= inst.shift();
-    while(esValido(fil,col,matriz,lim)&&inst.length>0){
+    while(esValido(fil,col,matriz,lim)&&inst.length>=0){
       recorrido.push({pf:fil,pc:col});
       if(matriz[fil][col]==-1){
         //vale todo
       }else{
-        matriz[fil][col]=1;
+        matriz[fil][col]++;
         //se mueve por inercia
-        var no= (sa+2)%4;
+        //var no= (sa+2)%4;
         //si va arriba y puede continuar
         up=esValido(fil-1,col,matriz,lim);
         if((sa==0) && up){
@@ -106,7 +106,9 @@ function recorrer(inst, matriz,fil,col){
           fil=fil-1;
         }else{
           if((sa==0) && !up){
-            sa= inst.shift();
+            sa = inst.shift();
+            matriz[fil][col]--;
+            continue;
           }
           //si va a la derecha y puede continuar
           right=esValido(fil,col+1,matriz,lim);
@@ -116,7 +118,9 @@ function recorrer(inst, matriz,fil,col){
             fil=fil;
           }else{
             if((sa==1) && !right){
-              sa= inst.shift();
+              sa = inst.shift();
+              matriz[fil][col]--;
+              continue;
             }
             //si va hacia abajo y puede continuar
             down = esValido(fil+1,col,matriz,lim);
@@ -125,7 +129,9 @@ function recorrer(inst, matriz,fil,col){
               fil=fil+1;
             }else{
               if((sa==2) && !down){
-                sa= inst.shift();
+                sa = inst.shift();
+                matriz[fil][col]--;
+                continue;
               }
               //si va hacia la izq y puede continuar
               left = esValido(fil,col-1,matriz,lim);
@@ -134,17 +140,17 @@ function recorrer(inst, matriz,fil,col){
                 fil=fil;
               }else{
                 if((sa==3) && !left){
-                  sa= inst.shift();
+                  sa = inst.shift();
+                  matriz[fil][col]--;
                 }
               }
             }
           }
         }
       }
-      console.log(sa);
-      //console.log(fil);
-      //console.log(col);
-
+      console.log(fil);
+      console.log(col);
+      console.log(esValido(fil,col,matriz,lim));
     }
   }
   return recorrido;
