@@ -8,10 +8,14 @@ llenarMatriz(tablero,1);
 
 var linea = [1,2,3,4,5];
 //print(tablero);
-var instrucciones =[1,2,1,2,1];
-var ruta = recorrer(instrucciones, nivel1,1,0);
-//print(instrucciones);
-print(printMyMatrix(nivel1));
+//var instrucciones =[1,2,1,2,1];//ok nivel1
+//var instrucciones =[1,2,1];//ok nivel2
+
+var instrucciones = [1,1,2,3,0,1,2,2,1];//nivel4
+//var instrucciones =[];
+var ruta = recorrer(instrucciones, nivel4,1,0);
+//print(ruta[10].pf+" "+ruta[10].pc);
+print(printMyMatrix(nivel4));
 //var prueba=[];
 //var elem = prueba.shift();
 //print(elem);
@@ -82,10 +86,10 @@ function llenarMatriz(matriz,x){
 }
 
 
-
+//devuelve el recorrido realizado en una matriz
 function recorrer(inst, matriz,fil,col){
   // 0 up,1 right, 2 down,3 left
-  var lim=1;
+  var lim=8;
   var recorrido=[];
   var sa=0;
   var up,right,down,left;
@@ -94,67 +98,65 @@ function recorrer(inst, matriz,fil,col){
     while(esValido(fil,col,matriz,lim)&&inst.length>=0){
       recorrido.push({pf:fil,pc:col});
       if(matriz[fil][col]==-1){
-        //vale todo
-      }else{
+        //decidir
+        sa= inst.shift();
+      }
+      if(matriz[fil][col]!=-1){
         matriz[fil][col]++;
-        //se mueve por inercia
-        //var no= (sa+2)%4;
-        //si va arriba y puede continuar
-        up=esValido(fil-1,col,matriz,lim);
-        if((sa==0) && up){
-          col=col;
-          fil=fil-1;
+      }
+      //si va arriba y puede continuar
+      up=esValido(fil-1,col,matriz,lim);
+      if((sa==0) && up){
+        col=col;
+        fil=fil-1;
+      }else{
+        if((sa==0) && !up){
+          sa = inst.shift();
+          matriz[fil][col]--;
+          continue;
+        }
+        //si va a la derecha y puede continuar
+        right=esValido(fil,col+1,matriz,lim);
+        if((sa==1) && right){
+          col=col+1;
+          fil=fil;
         }else{
-          if((sa==0) && !up){
+          if((sa==1) && !right){
             sa = inst.shift();
             matriz[fil][col]--;
             continue;
           }
-          //si va a la derecha y puede continuar
-          right=esValido(fil,col+1,matriz,lim);
-          //console.log(sa);
-          if((sa==1) && right){
-            col=col+1;
-            fil=fil;
+          //si va hacia abajo y puede continuar
+          down = esValido(fil+1,col,matriz,lim);
+          if((sa==2) && down){
+            col=col;
+            fil=fil+1;
           }else{
-            if((sa==1) && !right){
+            if((sa==2) && !down){
               sa = inst.shift();
               matriz[fil][col]--;
               continue;
             }
-            //si va hacia abajo y puede continuar
-            down = esValido(fil+1,col,matriz,lim);
-            if((sa==2) && down){
-              col=col;
-              fil=fil+1;
+            //si va hacia la izq y puede continuar
+            left = esValido(fil,col-1,matriz,lim);
+            if((sa==3) && left){
+              col=col-1;
+              fil=fil;
             }else{
-              if((sa==2) && !down){
+              if((sa==3) && !left){
                 sa = inst.shift();
                 matriz[fil][col]--;
-                continue;
-              }
-              //si va hacia la izq y puede continuar
-              left = esValido(fil,col-1,matriz,lim);
-              if((sa==3) && left){
-                col=col-1;
-                fil=fil;
-              }else{
-                if((sa==3) && !left){
-                  sa = inst.shift();
-                  matriz[fil][col]--;
-                }
               }
             }
           }
         }
       }
-      console.log(fil);
-      console.log(col);
-      console.log(esValido(fil,col,matriz,lim));
     }
   }
   return recorrido;
 }
+
+
 
 
 //retorna un bool, true cuando la posicion x,y esta dentro de la matriz
