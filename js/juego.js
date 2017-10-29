@@ -11,9 +11,9 @@ var linea = [1,2,3,4,5];
 //var instrucciones =[1,2,1,2,1];//ok nivel1
 //var instrucciones =[1,2,1];//ok nivel2
 
-var instrucciones = [1,1,2,3,0,1,2,2,1];//nivel4
+var instrucciones = [1,1,2,3,0,1,2,2,1];//nivel4 ok
 //var instrucciones =[];
-var ruta = recorrer(instrucciones, nivel4,1,0);
+var ruta = recorrer(instrucciones, nivel4,1,0,9,9);
 //print(ruta[10].pf+" "+ruta[10].pc);
 print(printMyMatrix(nivel4));
 //var prueba=[];
@@ -87,15 +87,14 @@ function llenarMatriz(matriz,x){
 
 
 //devuelve el recorrido realizado en una matriz
-function recorrer(inst, matriz,fil,col){
+function recorrer(inst, matriz,fil,col,ffil,fcol){
   // 0 up,1 right, 2 down,3 left
   var lim=8;
   var recorrido=[];
-  var sa=0;
   var up,right,down,left;
   if(inst.length>0){
-    sa= inst.shift();
-    while(esValido(fil,col,matriz,lim)&&inst.length>=0){
+    var sa= inst.shift();
+    while(esValido(fil,col,matriz,lim)&&inst.length>=0 && !(fil==ffil && col==fcol)){
       recorrido.push({pf:fil,pc:col});
       if(matriz[fil][col]==-1){
         //decidir
@@ -151,6 +150,10 @@ function recorrer(inst, matriz,fil,col){
           }
         }
       }
+    }
+    if(fil==ffil && col==fcol){
+      recorrido.push({pf:fil,pc:col});
+      matriz[fil][col]++;      
     }
   }
   return recorrido;
