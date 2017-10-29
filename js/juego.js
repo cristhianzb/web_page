@@ -21,6 +21,10 @@ print(printMyMatrix(nivel4));
 //print(elem);
 
 
+
+
+
+
 //crea una matriz dadas las filas y columnas
 function generarMatriz(fil,col){
     var matriz = new Array(fil);
@@ -33,6 +37,10 @@ function generarMatriz(fil,col){
 //imprime en el id printer
 function print(string){
   document.getElementById("printer").innerHTML=string;
+}
+
+function printId(string,id){
+  document.getElementById(id).innerHTML=string;
 }
 
 //devuelve un string que imprime una matriz
@@ -153,7 +161,7 @@ function recorrer(inst, matriz,fil,col,ffil,fcol){
     }
     if(fil==ffil && col==fcol){
       recorrido.push({pf:fil,pc:col});
-      matriz[fil][col]++;      
+      matriz[fil][col]++;
     }
   }
   return recorrido;

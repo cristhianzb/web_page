@@ -1,6 +1,6 @@
 var m = 9;
 var d = -1;
-var nivelm=
+var nivel1=
 [[m,m,m,m,m,m,m,m,m,m],
 [0,0,0,0,m,m,m,m,m,m],
 [m,m,m,0,m,m,m,m,m,m],
