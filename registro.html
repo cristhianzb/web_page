@@ -41,16 +41,33 @@
         <!--<input id="nick" type="text" name="nickname">-->
         <div class="input-group">
           <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
-        <input name="name" type="text" class="form-control" placeholder="NICKNAME">
+        <input id="nicknametxt" name="name" type="text" class="form-control" placeholder="NICKNAME">
       </div>
       </div>
         <span class="help-block" id="error"></span>
-        <button type="submit" name="btn" class="btn btn-info">COMENZAR</button>
+        <button id="boton-comenzar" type="submit" name="btn" class="btn btn-info">COMENZAR</button>
 
   </form>
   </div>
   </div>
+  
+  <script>
+ /*Funcion de Capturar, Almacenar datos y Limpiar campos*/
+$(document).ready(function(){    
+    $('#boton-comenzar').click(function(){        
+        /*Captura de datos escrito en los inputs*/        
+        var nom = document.getElementById("nicknametxt").value;
+        
+        /*Guardando los datos en el LocalStorage*/
+        localStorage.setItem("Nombre", nom);
+        /*Limpiando los campos o inputs*/
+        document.getElementById("nicknametxt").value = "";
+       
+    });   
+});
 
+
+</script>
 
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
