@@ -73,13 +73,11 @@ function GraficaLaberinto(matriz,canvas,recorrido){
     var point = {x:0,y:0};
     if(this.recorrido.length>0){
       point = this.recorrido.shift();
-      var px = (point.x*(this.anchoc+this.des))+this.anchoc/2;
-      var py = (point.y*(this.altoc+this.des))+this.altoc/2;
+      var px = (point.x*(this.anchoc+this.des));//+this.anchoc/2;
+      var py = (point.y*(this.altoc+this.des));//+this.altoc/2;
       point.x=px;
       point.y=py;
     }
-    console.log(point.x);
-    console.log(point.y);
     return point;
   };
 
@@ -90,6 +88,14 @@ function GraficaLaberinto(matriz,canvas,recorrido){
     this.ctx.beginPath();
     this.ctx.arc(x,y,radio,0,2*Math.PI,false);
     this.ctx.stroke();
+  };
+
+  this.dibImagen = function(x,y,id){
+    var imagen = document.getElementById(id);
+    this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    this.generarLaberinto();
+    this.ctx.drawImage(imagen,x,y);
+
   };
 
 

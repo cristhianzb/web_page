@@ -6,6 +6,7 @@
   <title>juego educativo </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -24,11 +25,29 @@
 
   <h3>Bienvenidos a este juego</h3>
 
-  <p id="printer">jajaja</p>
+  <!-- <p id="printer">jajaja</p> -->
+  <div>
+    <form action="#">
+	     <fieldset>
+    	     <legend> Instrucciones </legend>
+    	     <label for="instrucciones">Escriba aqui las instrucciones</label><br>
+      		<input type="text" id="instrucciones" ><br>
+          <button type="button" name="button" onclick="play()">Play</button>
+      </fieldset>
+    </form>
+  </div>
 
 <div id="laberinto" class="col-md-3 col-md-offset-3">
     <canvas id="canvas" width="600" height="600" style="background:green"></canvas>
 </div>
+
+<div>
+  <img id="personaje" src="resources/img/pelota3.png" alt="personaje escogido" style="display:none;" >
+</div>
+
+<!-- <div>
+  <img id="personaje" src="resources/img/mickey.jpg" alt="personaje escogido" style="display:none;">
+</div> -->
 
 
   <script src="js/jquery-3.2.1.min.js"></script>

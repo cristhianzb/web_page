@@ -2,21 +2,25 @@
 var inst =[1,1,2,2,1];
 var m1 = copiarMatriz(nivel4);
 var recorrido =recorrer(inst, nivel4,1,0,9,9);
-var lab = new GraficaLaberinto(m1,document.getElementById("canvas"),recorrido);
-lab.generarLaberinto();
+  var lab = new GraficaLaberinto(m1,document.getElementById("canvas"),recorrido);
+  lab.generarLaberinto();
+
 
 function mover() {
-  if(recorrido.length>=0){
+  if(recorrido.length>0){
     var p = lab.sigPaso();
-    lab.dibCirculo(p.x,p.y,10,'rgb(255,0,0)');
+    //lab.dibCirculo(p.x,p.y,10,'rgb(255,0,0)');
+    lab.dibImagen(p.x,p.y,"personaje");
   }else{
     clearInterval(inter);
   }
 }
 
 
-var inter = setInterval(mover,500);
-
+function play(){
+  
+  var inter = setInterval(mover,500);
+}
 
 
 

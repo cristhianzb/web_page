@@ -1,5 +1,17 @@
 body {
-    background-image: url("stich2.jpg");
-    background-color: #f13367;
+    //background-color: #f13367;
+    background-color: #ffb3cc;
     /*el link de los colores es: https://www.hexcolortool.com/CCCCCC#cccccc*/
 }
+
+/*
+#personaje{
+  width:40px;
+  height: 40px;
+  -webkit-transition:1.5s;
+  -webkit-transform:rotate(360deg);
+  -moz-transition:1.5s;
+  -moz-transform:rotate(360deg);
+
+
+}*/
