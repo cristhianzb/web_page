@@ -118,8 +118,17 @@ function GraficaLaberinto(matriz,canvas,recorrido,monedas){
       var c = 0;
       for (var j = 0; j <this.col; j++) {
         c=c+this.des;
-        if(this.matriz[i][j]==0 ||this.matriz[i][j]==-1 ){
+        if(this.matriz[i][j]==0){
           this.ctx.fillStyle='rgb(255, 223, 128)';
+          this.ctx.fillRect(c,f,this.anchoc,this.altoc);
+        }
+        if(this.matriz[i][j]==-1 ){
+          this.ctx.fillStyle='rgb(255, 153, 221)';
+          this.ctx.fillRect(c,f,this.anchoc,this.altoc);
+        }
+
+        if(this.matriz[i][j]==-2 ||this.matriz[i][j]==-3 ){
+          this.ctx.fillStyle='rgb(204, 204, 255)';
           this.ctx.fillRect(c,f,this.anchoc,this.altoc);
         }
         c=c+this.anchoc;
@@ -180,4 +189,8 @@ function GraficaLaberinto(matriz,canvas,recorrido,monedas){
   };
 
 
+}
+
+function terminarJuego(){
+  window.location.href="index.html";
 }

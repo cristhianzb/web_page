@@ -1,28 +1,55 @@
 //funciones de la pagina Game
+//datos iniciales
 var nickname = "nick";
 var puntos=0;
 var nivel=1;
 
-
+//globales
 setDatos(nickname,nivel,puntos);
-
 var m1 = nextNivel();
 var m2 = nextMonedas();
-
-
 setJuego();
-//necesarios
 var inter;
 var lab;
 var recorrido;
-//necesarios
+
 
 
 function play(){
   var inst =getInstrucciones();
-  lab.recorrido=recorrer(inst, copiarMatriz(m1),1,0,9,9);
+  var ini =getIni();
+  var fin =getFin();
+  lab.recorrido=recorrer(inst, copiarMatriz(m1),ini.f,ini.c,fin.f,fin.c);
   inter = setInterval(mover,500);
 }
+
+function getFin(){
+  var ans ={f:0,c:0};
+  for (var i = 0; i < m1.length; i++) {
+    for (var j = 0; j < m1[0].length; j++) {
+      if(m1[i][j]==-3){
+        ans.f=i;
+        ans.c=j;
+      }
+    }
+  }
+  return ans;
+}
+
+function getIni(){
+  var ans ={f:0,c:0};
+  for (var i = 0; i < m1.length; i++) {
+    for (var j = 0; j < m1[0].length; j++) {
+      if(m1[i][j]==-2){
+        ans.f=i;
+        ans.c=j;
+      }
+    }
+  }
+  return ans;
+}
+
+
 
 function setJuego(){
   lab = new GraficaLaberinto(m1,document.getElementById("canvas"),[],m2);
@@ -61,13 +88,13 @@ function mover() {
   var p;
   if(lab.recorrido.length>0){
     p = lab.sigPaso();
-    //lab.dibCirculo(p.x,p.y,10,'rgb(255,0,0)');
     lab.dibImagen(p.x,p.y,"personaje");
     setNextPuntaje(puntos);
   }else{
     clearInterval(inter);
-    console.log("detenido");
-
+    nivel++;
+    alert(nivel);
+    document.location.reload();
   }
 }
 
