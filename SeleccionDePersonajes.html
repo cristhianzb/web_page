@@ -15,14 +15,14 @@
   </head>
   </head>
   <body>
-    <nav class="navbar navbar-default">
+   <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">Game</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="index.html">HOME</a></li>
-          <li><a href="SeleccionDePersonajes.html">GAME</a></li>
+          <li><a href="registro.html">GAME</a></li>
           <li><a href="scoreboard.html">SCOREBOARD</a></li>
           <li><a href="help.html">HELP</a></li>
         </ul>
@@ -33,21 +33,83 @@
       <span class="badge badge-light">SELECCIONE SU PERSONAJE FAVORITO PARA JUGAR:</span>
     </h1>
 
+     <button id="botonCargar"  name="btn" class="btn btn-info" onclick="recuperarDatos()"> 
+     MOSTRAR NICKNAME </button>
+    <script>
 
 
+      function recuperarDatos(){
+      if ((localStorage.nombre != undefined)){
+       document.getElementById("botonCargar").innerHTML = "NICKNAME: " + localStorage.nombre;
+      }
+     else{
+     document.getElementById("botonCargar").innerHTML = "No has introducido un nickname!!!";
+    }
+    }
 
+    function guardarariel(){
+           localStorage.personaje = "ariel";
+    }
+     function guardarbella(){
+           localStorage.personaje = "bella";
+    }
+    function guardarcenicienta(){
+           localStorage.personaje = "cenicienta";
+    }
+    function guardarblancanieves(){
+           localStorage.personaje = "blancanieves";
+    }
+    function guardarjasmin(){
+           localStorage.personaje = "jasmin";
+    }
+    function guardarrapunzel(){
+           localStorage.personaje = "rapunzel";
+    }
+    function guardarmerida(){
+           localStorage.personaje = "merida";
+    }
+    function guardarmulan(){
+           localStorage.personaje = "mulan";
+    }
+    function guardaraurora(){
+           localStorage.personaje = "aurora";
+    }
+     function guardartiana(){
+           localStorage.personaje = "tiana";
+    }
+     function guardarminnie(){
+           localStorage.personaje = "minnie";
+    }
+     function guardarmickey(){
+           localStorage.personaje = "mickey";
+    }
+     function guardarbody(){
+           localStorage.personaje = "body";
+    }
+     function guardarstich(){
+           localStorage.personaje = "stich";
+    }
+     function guardardonal(){
+           localStorage.personaje = "donal";
+    }
+     function guardarpuca(){
+           localStorage.personaje = "puca";
+    }
+    </script>>
 
+    
+    
 
     <div class="row">
-    <div class="col-md-3" id="ariel">
+    <div class="col-md-3" >
 
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/ariel.jpg" alt="Card image cap" href="resources/img/ariel.jpg">
+          <img class="card-img-top"  src="resources/img/ariel.jpg" alt="Card image cap" href="resources/img/ariel.jpg" onclick="guardarariel()">
         </a>
-        <img onmouseover="bigImg(this)" src="ariel.jpg">
-        <h3 class="card-title card-center">Ariel</h3>
+        <img onmouseover="bigImg(this)"  src="ariel.jpg">
+        <h3 class="card-title card-center">  Ariel</h3>
     </div>
   </div>
 
@@ -56,7 +118,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/bella.jpg" alt="Card image cap" href="resources/img/bella.jpg">
+          <img class="card-img-top"  src="resources/img/bella.jpg" alt="Card image cap" href="resources/img/bella.jpg" onclick="guardarbella()">
         </a>
         <h3 class="card-title">Bella</h3>
     </div>
@@ -67,7 +129,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/cenicienta.jpeg" alt="Card image cap" href="resources/img/cenicienta.jpeg">
+          <img class="card-img-top"  src="resources/img/cenicienta.jpeg" alt="Card image cap" href="resources/img/cenicienta.jpeg"  onclick="guardarcenicienta()">
         </a>
         <h3 class="card-title">Cenicienta</h3>
     </div>
@@ -79,7 +141,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/blancanieves.jpeg" alt="Card image cap" href="resources/img/blancanieves.jpeg">
+          <img class="card-img-top"  src="resources/img/blancanieves.jpeg" alt="Card image cap" href="resources/img/blancanieves.jpeg" onclick="guardarblancanieves()">
         </a>
         <h3 class="card-title">Blancanieves</h3>
     </div>
@@ -92,7 +154,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/jasmin.jpg" alt="Card image cap" href="resources/img/jasmin.jpg">
+          <img class="card-img-top"  src="resources/img/jasmin.jpg" alt="Card image cap" href="resources/img/jasmin.jpg" onclick="guardarjasmin()">
         </a>
         <h3 class="card-title">Jasmin</h3>
     </div>
@@ -103,7 +165,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/rapunzel.jpeg" alt="Card image cap" href="resources/img/rapunzel.jpeg">
+          <img class="card-img-top"  src="resources/img/rapunzel.jpeg" alt="Card image cap" href="resources/img/rapunzel.jpeg" onclick="guardarrapunzel()">
         </a>
         <h3 class="card-title">Rapunzel</h3>
     </div>
@@ -113,7 +175,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/merida2.jpg" alt="Card image cap" href="resources/img/merida2.jpg">
+          <img class="card-img-top"  src="resources/img/merida2.jpg" alt="Card image cap" href="resources/img/merida2.jpg" onclick="guardarmerida()">
         </a>
         <h3 class="card-title">Merida</h3>
     </div>
@@ -124,7 +186,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/mulan.jpg" alt="Card image cap" href="resources/img/mulan.jpg">
+          <img class="card-img-top"  src="resources/img/mulan.jpg" alt="Card image cap" href="resources/img/mulan.jpg" onclick="guardarmulan()">
         </a>
         <h3 class="card-title">Mulan</h3>
     </div>
@@ -135,7 +197,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/aurora.jpg" alt="Card image cap" href="resources/img/aurora.jpg">
+          <img class="card-img-top"  src="resources/img/aurora.jpg" alt="Card image cap" href="resources/img/aurora.jpg" onclick="guardaraurora()">
         </a>
         <h3 class="card-title">Aurora</h3>
     </div>
@@ -146,7 +208,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/tiana.jpg" alt="Card image cap" href="resources/img/tiana.jpg">
+          <img class="card-img-top"  src="resources/img/tiana.jpg" alt="Card image cap" href="resources/img/tiana.jpg" onclick="guardartiana()">
         </a>
         <h3 class="card-title">Tiana</h3>
     </div>
@@ -157,7 +219,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/minnie.jpg" alt="Card image cap" href="resources/img/minnie.jpg">
+          <img class="card-img-top"  src="resources/img/minnie.jpg" alt="Card image cap" href="resources/img/minnie.jpg" onclick="guardarminnie()">
         </a>
         <h3 class="card-title">Minnie</h3>
     </div>
@@ -168,7 +230,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/mickey.jpg" alt="Card image cap" href="resources/img/mickey.jpg">
+          <img class="card-img-top"  src="resources/img/mickey.jpg" alt="Card image cap" href="resources/img/mickey.jpg" onclick="guardarmickey()">
         </a>
         <h3 class="card-title">Mickey</h3>
     </div>
@@ -179,7 +241,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/body.jpg" alt="Card image cap" href="resources/img/body.jpg">
+          <img class="card-img-top"  src="resources/img/body.jpg" alt="Card image cap" href="resources/img/body.jpg" onclick="guardarbody()">
         </a>
         <h3 class="card-title">Body</h3>
     </div>
@@ -190,7 +252,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/stich.jpg" alt="Card image cap" href="resources/img/stich.jpg">
+          <img class="card-img-top"  src="resources/img/stich.jpg" alt="Card image cap" href="resources/img/stich.jpg" onclick="guardarstich()">
         </a>
         <h3 class="card-title">Stich</h3>
     </div>
@@ -200,7 +262,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/donal.jpg" alt="Card image cap" href="resources/img/donal.jpg">
+          <img class="card-img-top"  src="resources/img/donal.jpg" alt="Card image cap" href="resources/img/donal.jpg" onclick="guardardonal()">
         </a>
         <h3 class="card-title">Donal</h3>
     </div>
@@ -210,7 +272,7 @@
     <div class="card" style="width: 20rem;">
 
         <a href="game.html"> <!-- Aqui debe redireccionar a un lado-->
-          <img class="card-img-top"  src="resources/img/puca.jpg" alt="Card image cap" href="resources/img/puca.jpg">
+          <img class="card-img-top"  src="resources/img/puca.jpg" alt="Card image cap" href="resources/img/puca.jpg" onclick="guardarpuca()">
         </a>
         <h3 class="card-title">Puca</h3>
     </div>
@@ -240,8 +302,9 @@
 addEventListener( 'click', llamaUnaFuncion());
   </script>
 -->
-    <a href="registro.html">Registrar</a>
+  
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
+
   </body>
   </html>

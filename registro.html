@@ -13,15 +13,14 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.html">HOME</a></li>
-        <li><a href="SeleccionDePersonajes.html">GAME</a></li>
+        <li><a href="registro.html">GAME</a></li>
         <li><a href="scoreboard.html">SCOREBOARD</a></li>
         <li><a href="help.html">HELP</a></li>
       </ul>
     </div>
   </nav>
 
-
-
+    
   <h1>Bienvenidos</h1>
   <p>Antes de comenzar con el juego registre los siguientes datos</p>
 
@@ -30,10 +29,7 @@
     <div class="signup-form-container">
      <div class="form-body">
                                        
-  <form action="SeleccionDePersonajes.html" method="post">
-       <div class="form-header">
-          <h3 class="form-title"><i class="fa fa-user"></i> COMENZAR</h3>
-         </div>
+ 
 
       <div class="form-group">
         <label for="nick">Nickname</label>
@@ -45,32 +41,27 @@
       </div>
       </div>
         <span class="help-block" id="error"></span>
-        <button id="boton-comenzar" type="submit" name="btn" class="btn btn-info">COMENZAR</button>
-
-  </form>
-  </div>
-  </div>
-  
-  <script>
- /*Funcion de Capturar, Almacenar datos y Limpiar campos*/
-$(document).ready(function(){    
-    $('#boton-comenzar').click(function(){        
-        /*Captura de datos escrito en los inputs*/        
-        var nom = document.getElementById("nicknametxt").value;
-        
-        /*Guardando los datos en el LocalStorage*/
-        localStorage.setItem("Nombre", nom);
-        /*Limpiando los campos o inputs*/
-        document.getElementById("nicknametxt").value = "";
+        <form action="SeleccionDePersonajes.html">
+        <button id="boton-comenzar" name="btn" class="btn btn-info" onclick="guardarDatos()" action="SeleccionDePersonajes.html">COMENZAR</button>
+      </form>
        
-    });   
-});
+        
 
+  </div>
+  </div>    
+ <script>
+     function guardarDatos(){
+ localStorage.nombre = document.getElementById("nicknametxt").value;
+ 
+}
+ 
 
-</script>
+     
+ </script>
 
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  
 </body>
 
 </html>
