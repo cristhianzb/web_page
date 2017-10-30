@@ -23,16 +23,24 @@
     </div>
   </nav>
 
-  <h3>Bienvenidos a este juego</h3>
 
-  <!-- <p id="printer">jajaja</p> -->
+
+  <h3 id="nivel">Nivel:</h3>
   <div>
     <form action="#">
 	     <fieldset>
     	     <legend> Instrucciones </legend>
     	     <label for="instrucciones">Escriba aqui las instrucciones</label><br>
       		<input type="text" id="instrucciones" ><br>
-          <button type="button" name="button" onclick="play()">Play</button>
+
+          <button id="b_arriba"type="button" name="arriba"><img src="resources/img/flecha2.png" alt="arriba" style="-webkit-transform: rotate(-90deg);-moz-transform: rotate(-90deg);">
+          <button id="b_abajo" type="button" name="abajo"><img src="resources/img/flecha2.png" alt="abajo" style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);">
+          <button id="b_izq" type="button" name="izquierda"><img src="resources/img/flecha2.png" alt="izquierda" style="-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);">
+          <button id="b_der" type="button" name="derecha"><img src="resources/img/flecha2.png" alt="derecha">
+          </button>
+          <br>
+          <button type="button" name="play" onclick="play()">Play</button>
+          <button type="button" name="stop" onclick="detenerSetInterval()">Stop</button>
       </fieldset>
     </form>
   </div>
@@ -43,6 +51,10 @@
 
 <div>
   <img id="personaje" src="resources/img/pelota3.png" alt="personaje escogido" style="display:none;" >
+</div>
+
+<div>
+  <img id="moneda" src="resources/img/moneda_small.png" alt="personaje escogido" style="display:none;" >
 </div>
 
 <!-- <div>

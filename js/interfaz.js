@@ -60,7 +60,7 @@ function GraficaLaberinto(matriz,canvas,recorrido){
       for (var j = 0; j <this.col; j++) {
         c=c+this.des;
         if(this.matriz[i][j]==0 ||this.matriz[i][j]==-1 ){
-          this.ctx.fillStyle='rgb(255,255,255)';
+          this.ctx.fillStyle='rgb(255, 223, 128)';
           this.ctx.fillRect(c,f,this.anchoc,this.altoc);
         }
         c=c+this.anchoc;

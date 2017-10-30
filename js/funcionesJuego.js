@@ -1,28 +1,41 @@
 //funciones de la pagina Game
+setNivel();
 var inst =[1,1,2,2,1];
 var m1 = copiarMatriz(nivel4);
 var recorrido =recorrer(inst, nivel4,1,0,9,9);
   var lab = new GraficaLaberinto(m1,document.getElementById("canvas"),recorrido);
   lab.generarLaberinto();
+var inter;
 
 
 function mover() {
+  var p;
   if(recorrido.length>0){
-    var p = lab.sigPaso();
+    p = lab.sigPaso();
     //lab.dibCirculo(p.x,p.y,10,'rgb(255,0,0)');
     lab.dibImagen(p.x,p.y,"personaje");
   }else{
     clearInterval(inter);
+    console.log("detenido");
   }
 }
 
 
 function play(){
-  
-  var inter = setInterval(mover,500);
+  var ins = document.getElementById("instrucciones").value;
+  alert(ins);
+  inter = setInterval(mover,500);
 }
 
+function detenerSetInterval(){
+  clearInterval(inter);
+}
 
+function setNivel(){
+  var ni = 0;
+  var cadena = "Nivel:"+ni;
+  $("#nivel").html(cadena);
+}
 
 
 
