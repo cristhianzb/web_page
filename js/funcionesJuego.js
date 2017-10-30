@@ -2,8 +2,9 @@
 setNivel();
 var inst =[1,1,2,2,1];
 var m1 = copiarMatriz(nivel4);
+var m2 = copiarMatriz(monedas_nivel4);
 var recorrido =recorrer(inst, nivel4,1,0,9,9);
-  var lab = new GraficaLaberinto(m1,document.getElementById("canvas"),recorrido);
+  var lab = new GraficaLaberinto(m1,document.getElementById("canvas"),recorrido,m2);
   lab.generarLaberinto();
 var inter;
 
@@ -15,6 +16,7 @@ function mover() {
     p = lab.sigPaso();
     //lab.dibCirculo(p.x,p.y,10,'rgb(255,0,0)');
     lab.dibImagen(p.x,p.y,"personaje");
+    setPuntaje(0);
   }else{
     clearInterval(inter);
     console.log("detenido");
@@ -23,8 +25,9 @@ function mover() {
 
 
 function play(){
-  alert(ins);
   var ins = document.getElementById("instrucciones").value;
+  var cadena = ins.split(",");
+  alert(cadena[1]);
   inter = setInterval(mover,500);
 }
 
@@ -36,6 +39,12 @@ function setNivel(){
   var ni = 0;
   var cadena = "Nivel:"+ni;
   $("#nivel").html(cadena);
+}
+
+function setPuntaje(ini){
+  var ni = ini + lab.puntaje;
+  var cadena = "Puntaje:"+ni;
+  $("#puntaje").html(cadena);
 }
 
 

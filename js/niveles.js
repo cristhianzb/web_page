@@ -1,6 +1,6 @@
 var m = 9;
 var d = -1;
-var v = -2;
+var v = 1;
 var nivel1=
 [[m,m,m,m,m,m,m,m,m,m],
 [0,0,0,0,m,m,m,m,m,m],
@@ -63,7 +63,8 @@ var nivel4=
 [m,m,m,m,m,0,m,m,m,m],
 [m,m,m,m,m,0,m,m,m,m],
 [m,m,m,m,m,0,0,0,0,0]];
-var modenas_nivel4=
+
+var monedas_nivel4=
 [[m,m,m,m,m,m,m,m,m,m],
 [0,0,0,d,v,v,0,0,0,0],
 [m,m,m,0,m,v,m,m,m,m],

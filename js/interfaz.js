@@ -95,7 +95,7 @@ function generarLaberinto2(matriz,canvas){
 }
 
 
-function GraficaLaberinto(matriz,canvas,recorrido){
+function GraficaLaberinto(matriz,canvas,recorrido,monedas){
   this.recorrido=recorrido;
   this.matriz=matriz;
   this.fil=matriz.length;
@@ -105,6 +105,8 @@ function GraficaLaberinto(matriz,canvas,recorrido){
   this.des = 5;
   this.anchoc = (canvas.width/this.col)-this.des;
   this.altoc = (canvas.height/this.fil)-this.des;
+  this.monedas=monedas;
+  this.puntaje=0;
 
   this.generarLaberinto=function(){
     var f = 0;
@@ -121,12 +123,19 @@ function GraficaLaberinto(matriz,canvas,recorrido){
       }
       f=f+this.altoc;
     }
+    this.dibMonedas();
   };
 
   this.sigPaso=function(){
     var point = {x:0,y:0};
     if(this.recorrido.length>0){
       point = this.recorrido.shift();
+      //monedas
+      if(this.monedas[point.y][point.x]==1){
+        this.monedas[point.y][point.x]=0;
+        this.puntaje++;
+      }
+      this.generarLaberinto();
       var px = (point.x*(this.anchoc+this.des));//+this.anchoc/2;
       var py = (point.y*(this.altoc+this.des));//+this.altoc/2;
       point.x=px;
@@ -149,6 +158,21 @@ function GraficaLaberinto(matriz,canvas,recorrido){
     this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
     this.generarLaberinto();
     this.ctx.drawImage(imagen,x,y);
+  };
+
+  this.dibMonedas = function(){
+    var imagen = document.getElementById("moneda");
+    var px,py;
+    for (var i = 0; i < this.monedas.length; i++) {
+      for (var j = 0; j <this.monedas[0].length; j++) {
+        if (this.monedas[i][j]==1) {
+          px = j*(this.anchoc+1.5*this.des);
+          py = i*(this.anchoc+1.5*this.des);
+          this.ctx.drawImage(imagen,px,py);
+        }
+
+      }
+    }
 
   };
 
