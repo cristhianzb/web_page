@@ -16,6 +16,9 @@ function generarLaberinto(matriz,id){
 */
 
 
+var niveles=[nivel1,nivel2,nivel3,nivel4,nivel5,nivel6,nivel7];
+var monedas_niveles=[monedas_nivel1,monedas_nivel2,monedas_nivel3,monedas_nivel4,monedas_nivel5,monedas_nivel6,monedas_nivel7];
+
 function borrarInst(){
   var inst = document.getElementById("instrucciones");
   var cadena = inst.value.substring(0,inst.value.length-1);
