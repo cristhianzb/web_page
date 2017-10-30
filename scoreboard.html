@@ -35,71 +35,158 @@
                 </thead>
                 <tbody>
                     <tr class="active">
-                        <td id="datos"> Personaje por Defecto
+                        <td id="datos"> ariel
                         </td>
                         <td  id="datos2"> S/N
                         </td>
-                        <td  id="datos3"> Puntos
+                        <td  id="datos3"> 0 Puntos
                            
                         </td>
                     </tr>
                     <tr>
-                        <td id="datos4"> Personaje por Defecto 
+                        <td id="datos4"> bella 
                         </td>
                         <td  id="datos5"> S/N
                         </td>
                        
-                        <td  id="datos6"> Puntos
+                        <td  id="datos6"> 0  Puntos
                            
                         </td>
                     </tr>
                     <tr class="success">
-                        <td id="datos7">  Personaje por Defecto
+                        <td id="datos7"> cenicienta
                         </td>
                         <td  id="datos8"> S/N
                         </td>
                        
-                        <td  id="datos9">  Puntos
+                        <td  id="datos9"> 0 Puntos
                            
                         </td>
                     </tr>
                     <tr>
-                        <td id="datos10">  Personaje por Defecto
+                        <td id="datos10">  blancanieves
                         </td>
                         <td  id="datos11"> S/N
                         </td>
                        
-                        <td  id="datos12">  Puntos
+                        <td  id="datos12"> 0 Puntos
                            
                         </td>
                     </tr>
                     <tr class="warning">
-                        <td id="datos13">  Personaje por Defecto
+                        <td id="datos13">  jasmin
                         </td>
                         <td  id="datos14"> S/N
                         </td>
                        
-                        <td  id="datos15">  Puntos
+                        <td  id="datos15"> 0 Puntos
                            
                         </td>
                     </tr>
                     <tr>
-                       <td id="datos16">  Personaje por Defecto
+                       <td id="datos16"> rapunzel
                         </td>
                         <td  id="datos17"> S/N
                         </td>
                        
-                        <td  id="datos18">  Puntos
+                        <td  id="datos18"> 0 Puntos
                            
                         </td>
                     </tr>
                     <tr class="danger">
-                        <td id="datos19">  Personaje por Defecto
+                        <td id="datos19"> merida
                         </td>
                         <td  id="datos20"> S/N
                         </td>
                        
-                        <td  id="datos21">  Puntos
+                        <td  id="datos21"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                     <tr class="active">
+                        <td id="datos22"> mulan
+                        </td>
+                        <td  id="datos23"> S/N
+                        </td>
+                        <td  id="datos24"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="datos25"> aurora
+                        </td>
+                        <td  id="datos26"> S/N
+                        </td>
+                       
+                        <td  id="datos27"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td id="datos28"> tiana
+                        </td>
+                        <td  id="datos29"> S/N
+                        </td>
+                       
+                        <td  id="datos30"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="datos31">  minnie
+                        </td>
+                        <td  id="datos32"> S/N
+                        </td>
+                       
+                        <td  id="datos33"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                    <tr class="warning">
+                        <td id="datos34">  body
+                        </td>
+                        <td  id="datos35"> S/N
+                        </td>
+                       
+                        <td  id="datos36"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                       <td id="datos37"> stich
+                        </td>
+                        <td  id="datos38"> S/N
+                        </td>
+                       
+                        <td  id="datos39"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                    <tr class="danger">
+                        <td id="datos40"> donal
+                        </td>
+                        <td  id="datos41"> S/N
+                        </td>
+                       
+                        <td  id="datos42"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td id="datos43"> puca
+                        </td>
+                        <td  id="datos44"> S/N
+                        </td>
+                        <td  id="datos45"> 0 Puntos
+                           
+                        </td>
+                    </tr>
+                         <td id="datos46"> mickey
+                        </td>
+                        <td  id="datos47"> S/N
+                        </td>
+                       
+                        <td  id="datos48"> 0 Puntos
                            
                         </td>
                     </tr>
@@ -112,9 +199,14 @@
 
     <span class="help-block" id="error"></span>
         <button id="botonactualizar" type="submit" name="btn" class="btn btn-info" onclick="recuperarPersonaje()" >ACTUALIZAR</button>
+
     
          <script>
       
+      function guardarptos(){
+        localStorage.puntos="Please wait"
+      }
+
       function recuperarPersonaje(){
       if ((localStorage.personaje != undefined)){
        document.getElementById("datos").innerHTML = localStorage.personaje;
@@ -128,7 +220,10 @@
      else{
      document.getElementById("datos2").innerHTML = "No has introducido un Nickname!";
     }
-    }   
+
+    }
+     
+
     </script>
         
 
