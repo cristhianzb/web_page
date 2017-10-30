@@ -1,8 +1,13 @@
 //funciones de la pagina Game
+var datos="10";
+localStorage.setItem("nombre","nick")
+localStorage.setItem("nick",datos);
+
+
 //datos iniciales
-var nickname = "nick";
-var puntos=0;
-var nivel=1;
+var nickname = localStorage.nombre;
+var nivel=localStorage.getItem("nick")[0];
+var puntos=localStorage.getItem("nick")[1];
 
 //globales
 setDatos(nickname,nivel,puntos);
@@ -12,14 +17,19 @@ setJuego();
 var inter;
 var lab;
 var recorrido;
+var p;//punto actual
+var ini;
+var fin;
+var recorrido_length;
 
 
 
 function play(){
   var inst =getInstrucciones();
-  var ini =getIni();
-  var fin =getFin();
+  ini =getIni();
+  fin =getFin();
   lab.recorrido=recorrer(inst, copiarMatriz(m1),ini.f,ini.c,fin.f,fin.c);
+  recorrido_length = lab.recorrido.length;
   inter = setInterval(mover,500);
 }
 
@@ -85,15 +95,20 @@ function getInstrucciones(){
 
 
 function mover() {
-  var p;
-  if(lab.recorrido.length>0){
+  if(recorrido_length>0){
     p = lab.sigPaso();
+    recorrido_length--;
     lab.dibImagen(p.x,p.y,"personaje");
-    setNextPuntaje(puntos);
+    setNextPuntaje();
   }else{
     clearInterval(inter);
-    nivel++;
-    alert(nivel);
+    if((fin.f*(lab.altoc+lab.des))==p.y && (fin.c*(lab.anchoc+lab.des))==p.x){
+      nivel++;
+      alert(nivel);
+    }else {
+      alert(p.y+" , "+p.x);
+      alert("no lo lograste, intenta de nuevo");
+    }
     document.location.reload();
   }
 }
@@ -115,8 +130,8 @@ function setPuntaje(p){
   $("#puntaje").html(cadena);
 }
 
-function setNextPuntaje(miPuntaje){
-  var ni = miPuntaje + lab.puntaje;
+function setNextPuntaje(){
+  var ni = puntos + lab.puntaje;
   var cadena = "Puntaje:"+ni;
   $("#puntaje").html(cadena);
 }

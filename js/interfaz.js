@@ -110,6 +110,7 @@ function GraficaLaberinto(matriz,canvas,recorrido,monedas){
   this.altoc = (canvas.height/this.fil)-this.des;
   this.monedas=monedas;
   this.puntaje=0;
+  this.terminado = false;
 
   this.generarLaberinto=function(){
     var f = 0;

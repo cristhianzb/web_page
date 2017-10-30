@@ -146,8 +146,8 @@ function recorrer(inst, matriz,fil,col,ffil,fcol){
         }
       }
     }
-    if(fil==ffil && col==fcol){
-      recorrido.push({pf:fil,pc:col});
+    if(fil==ffil && col==fcol){      
+      recorrido.push({y:fil,x:col});
       matriz[fil][col]++;
     }
   }
