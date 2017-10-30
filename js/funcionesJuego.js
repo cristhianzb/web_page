@@ -1,13 +1,11 @@
 //funciones de la pagina Game
-//var datos="10";
-//localStorage.setItem("nombre","nick")
-//localStorage.setItem("nick",datos);
+
 
 
 //datos iniciales
 var nickname = localStorage.nombre;
-var nivel=localStorage.getItem(nickname)[0];
-var puntos=localStorage.getItem(nickname)[1];
+var nivel=Number(localStorage.getItem(nickname)[0]);
+var puntos=Number(localStorage.getItem(nickname).substring(1,localStorage.getItem(nickname).length));
 
 //globales
 setDatos(nickname,nivel,puntos);
@@ -104,9 +102,10 @@ function mover() {
     clearInterval(inter);
     if((fin.f*(lab.altoc+lab.des))==p.y && (fin.c*(lab.anchoc+lab.des))==p.x){
       nivel++;
-      alert(nivel);
+      puntos = puntos + Number(lab.puntaje);
+      var cadena = ""+Number(nivel)+""+Number(puntos);
+      localStorage.setItem(localStorage.nombre,cadena);
     }else {
-      alert(p.y+" , "+p.x);
       alert("no lo lograste, intenta de nuevo");
     }
     document.location.reload();
@@ -131,8 +130,8 @@ function setPuntaje(p){
 }
 
 function setNextPuntaje(){
-  var ni = puntos + lab.puntaje;
-  var cadena = "Puntaje:"+ni;
+  var ni = puntos + Number(lab.puntaje);
+  var cadena = "Puntaje:"+Number(ni);
   $("#puntaje").html(cadena);
 }
 
@@ -146,24 +145,3 @@ function setDatos(nickame,nivel,puntos){
   setNivel(nivel);
   setPuntaje(puntos);
 }
-
-
-
-//generarLaberinto2(nivel3,"canvas");
-//console.log(lab.getNivel());
-
-//llenarMatriz(tablero,1);
-
-//var linea = [1,2,3,4,5];
-//print(tablero);
-//var instrucciones =[1,2,1,2,1];//ok nivel1
-//var instrucciones =[1,2,1];//ok nivel2
-
-//var instrucciones = [1,1,2,3,0,1,2,2,1];//nivel4 ok
-//var instrucciones =[];
-//var ruta = recorrer(instrucciones, nivel4,1,0,9,9);
-//print(ruta[10].pf+" "+ruta[10].pc);
-//print(printMyMatrix(nivel4));
-//var prueba=[];
-//var elem = prueba.shift();
-//print(elem);

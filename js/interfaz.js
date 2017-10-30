@@ -21,7 +21,7 @@ var monedas_niveles=[monedas_nivel1,monedas_nivel2,monedas_nivel3,monedas_nivel4
 
 function borrarInst(){
   var inst = document.getElementById("instrucciones");
-  var cadena = inst.value.substring(0,inst.value.length-1);
+  var cadena = inst.value.substring(0,inst.value.length-2);
   inst.value=cadena;
 }
 
