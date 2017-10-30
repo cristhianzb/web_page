@@ -1,13 +1,13 @@
 //funciones de la pagina Game
-var datos="10";
-localStorage.setItem("nombre","nick")
-localStorage.setItem("nick",datos);
+//var datos="10";
+//localStorage.setItem("nombre","nick")
+//localStorage.setItem("nick",datos);
 
 
 //datos iniciales
 var nickname = localStorage.nombre;
-var nivel=localStorage.getItem("nick")[0];
-var puntos=localStorage.getItem("nick")[1];
+var nivel=localStorage.getItem(nickname)[0];
+var puntos=localStorage.getItem(nickname)[1];
 
 //globales
 setDatos(nickname,nivel,puntos);
