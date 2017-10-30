@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-default">
+   <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">Game</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="index.html">HOME</a></li>
-          <li><a href="SeleccionDePersonajes.html">GAME</a></li>
+          <li><a href="registro.html">GAME</a></li>
           <li><a href="scoreboard.html">SCOREBOARD</a></li>
           <li><a href="help.html">HELP</a></li>
         </ul>
@@ -35,80 +35,72 @@
                 </thead>
                 <tbody>
                     <tr class="active">
-                        <td>
-                            Personaje#1
+                        <td id="datos"> Personaje por Defecto
                         </td>
-                        <td id="nickname1">
-                            Nickname"1
+                        <td  id="datos2"> S/N
                         </td>
-                        <td>
-                           Puntos
+                        <td  id="datos3"> Puntos
+                           
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            Personaje#2
+                        <td id="datos4"> Personaje por Defecto 
                         </td>
-                        <td>
-                            Nickname#2
+                        <td  id="datos5"> S/N
                         </td>
-                        <td>
-                            Puntos
+                       
+                        <td  id="datos6"> Puntos
+                           
                         </td>
                     </tr>
                     <tr class="success">
-                        <td>
-                            Personaje#3
+                        <td id="datos7">  Personaje por Defecto
                         </td>
-                        <td>
-                            Nickname#3
+                        <td  id="datos8"> S/N
                         </td>
-                        <td>
-                            Puntos
+                       
+                        <td  id="datos9">  Puntos
+                           
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            Personaje#4
+                        <td id="datos10">  Personaje por Defecto
                         </td>
-                        <td>
-                           Nickname#4
+                        <td  id="datos11"> S/N
                         </td>
-                        <td>
-                           Puntos
+                       
+                        <td  id="datos12">  Puntos
+                           
                         </td>
                     </tr>
                     <tr class="warning">
-                        <td>
-                            Personaje#5
+                        <td id="datos13">  Personaje por Defecto
                         </td>
-                        <td>
-                            Nickname#5
+                        <td  id="datos14"> S/N
                         </td>
-                        <td>
-                            Puntos
+                       
+                        <td  id="datos15">  Puntos
+                           
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                           Personaje#6
+                       <td id="datos16">  Personaje por Defecto
                         </td>
-                        <td>
-                            Nickname#6
+                        <td  id="datos17"> S/N
                         </td>
-                        <td>
-                            Puntos
+                       
+                        <td  id="datos18">  Puntos
+                           
                         </td>
                     </tr>
                     <tr class="danger">
-                        <td>
-                            Personaje#7
+                        <td id="datos19">  Personaje por Defecto
                         </td>
-                        <td>
-                            Nickname#7
+                        <td  id="datos20"> S/N
                         </td>
-                        <td>
-                            Puntos
+                       
+                        <td  id="datos21">  Puntos
+                           
                         </td>
                     </tr>
                 </tbody>
@@ -118,21 +110,28 @@
             </table>
 
 
-   <script>
-     /*Funcion Cargar y Mostrar datos*/
-$(document).ready(function(){
-    $('#boton-actualizar').click(function(){
-        /*Obtener datos almacenados*/
-        var nombre = localStorage.getItem("Nombre");
-        /*var apellido = localStorage.getItem("Apellido");
-        /*Mostrar datos almacenados*/
-        document.getElementById("nombre").innerHTML = nombre;
-        /*document.getElementById("apellido").innerHTML = apellido; */
-    });
-});
-   </script>
     <span class="help-block" id="error"></span>
-        <button id="boton-actualizar" type="submit" name="btn" class="btn btn-info">ACTUALIZAR</button>
+        <button id="botonactualizar" type="submit" name="btn" class="btn btn-info" onclick="recuperarPersonaje()" >ACTUALIZAR</button>
+    
+         <script>
+      
+      function recuperarPersonaje(){
+      if ((localStorage.personaje != undefined)){
+       document.getElementById("datos").innerHTML = localStorage.personaje;
+      }
+     else{
+     document.getElementById("datos").innerHTML = "No has introducido tu nombre y tu password";
+    }
+     if ((localStorage.nombre != undefined)){
+       document.getElementById("datos2").innerHTML =  localStorage.nombre;
+      }
+     else{
+     document.getElementById("datos2").innerHTML = "No has introducido un Nickname!";
+    }
+    }   
+    </script>
+        
+
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
