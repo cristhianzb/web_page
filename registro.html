@@ -20,7 +20,7 @@
     </div>
   </nav>
 
-    
+
   <h1>Bienvenidos</h1>
   <p>Antes de comenzar con el juego registre los siguientes datos</p>
 
@@ -28,8 +28,8 @@
 
     <div class="signup-form-container">
      <div class="form-body">
-                                       
- 
+
+
 
       <div class="form-group">
         <label for="nick">Nickname</label>
@@ -44,24 +44,26 @@
         <form action="SeleccionDePersonajes.html">
         <button id="boton-comenzar" name="btn" class="btn btn-info" onclick="guardarDatos()" action="SeleccionDePersonajes.html">COMENZAR</button>
       </form>
-       
-        
+
+
 
   </div>
-  </div>    
+  </div>
  <script>
      function guardarDatos(){
- localStorage.nombre = document.getElementById("nicknametxt").value;
- 
-}
- 
+       localStorage.nombre = document.getElementById("nicknametxt").value;
+       if(localStorage.getItem(localStorage.nombre)==null){
+         localStorage.setItem(localStorage.nombre,"10");
+       }
+     }
 
-     
+
+
  </script>
 
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  
+
 </body>
 
 </html>
