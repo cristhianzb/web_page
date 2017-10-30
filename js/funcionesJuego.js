@@ -8,6 +8,7 @@ var recorrido =recorrer(inst, nivel4,1,0,9,9);
 var inter;
 
 
+
 function mover() {
   var p;
   if(recorrido.length>0){
@@ -22,8 +23,8 @@ function mover() {
 
 
 function play(){
-  var ins = document.getElementById("instrucciones").value;
   alert(ins);
+  var ins = document.getElementById("instrucciones").value;
   inter = setInterval(mover,500);
 }
 

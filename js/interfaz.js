@@ -16,6 +16,60 @@ function generarLaberinto(matriz,id){
 */
 
 
+function borrarInst(){
+  var inst = document.getElementById("instrucciones");
+  var cadena = inst.value.substring(0,inst.value.length-1);
+  inst.value=cadena;
+}
+
+function agregarArriba(){
+  var inst = document.getElementById("instrucciones");
+  var cadena="";
+  if (cadena==inst.value) {
+    cadena = "0";
+  }else {
+    cadena = inst.value+",0";
+  }
+  inst.value=cadena;
+}
+
+
+function agregarAbajo(){
+  var inst = document.getElementById("instrucciones");
+  var cadena="";
+  if (cadena==inst.value) {
+    cadena = "2";
+  }else {
+    cadena = inst.value+",2";
+  }
+  inst.value=cadena;
+}
+
+
+function agregarDer(){
+  var inst = document.getElementById("instrucciones");
+  var cadena="";
+  if (cadena==inst.value) {
+    cadena = "1";
+  }else {
+    cadena = inst.value+",1";
+  }
+  inst.value=cadena;
+}
+
+
+function agregarIzq(){
+  var inst = document.getElementById("instrucciones");
+  var cadena="";
+  if (cadena==inst.value) {
+    cadena = "3";
+  }else {
+    cadena = inst.value+",3";
+  }
+  inst.value=cadena;
+}
+
+
 function generarLaberinto2(matriz,canvas){
   var canvas = document.getElementById(canvas);
   var ctx = canvas.getContext("2d");
