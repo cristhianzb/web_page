@@ -23,13 +23,116 @@
     </nav>
     <h1>Lista de puntajes</h1>
     <p>Selecione uno de los registros, para continuar el juego</p>
-    <table class="table">
-      <tr>
-        <th>Personaje</th>
-        <th>Nickname</th>
-        <th>Score</th>
+ 
+      <table class="table">
+                <thead>
+                    <tr>
+                       <th>Personaje</th>
+                       <th>Nickname</th>
+                        <th>Score</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active">
+                        <td>
+                            Personaje#1
+                        </td>
+                        <td id="nickname1">
+                            Nickname"1  
+                        </td>
+                        <td>
+                           Puntos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Personaje#2
+                        </td>
+                        <td>
+                            Nickname#2
+                        </td>
+                        <td>
+                            Puntos
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            Personaje#3
+                        </td>
+                        <td>
+                            Nickname#3 
+                        </td>
+                        <td>
+                            Puntos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Personaje#4
+                        </td>
+                        <td>
+                           Nickname#4 
+                        </td>
+                        <td>
+                           Puntos
+                        </td>
+                    </tr>
+                    <tr class="warning">
+                        <td>
+                            Personaje#5
+                        </td>
+                        <td>
+                            Nickname#5 
+                        </td>
+                        <td>
+                            Puntos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Personaje#6
+                        </td>
+                        <td>
+                            Nickname#6 
+                        </td>
+                        <td>
+                            Puntos
+                        </td>
+                    </tr>
+                    <tr class="danger">
+                        <td>
+                            Personaje#7
+                        </td>
+                        <td>
+                            Nickname#7
+                        </td>
+                        <td>
+                            Puntos
+                        </td>
+                    </tr>
+                </tbody>
+                 <tr>
+       
       </tr>
-    </table>
+            </table>
+     
+    
+   <script>
+     /*Funcion Cargar y Mostrar datos*/
+$(document).ready(function(){    
+    $('#boton-actualizar').click(function(){                       
+        /*Obtener datos almacenados*/
+        var nombre = localStorage.getItem("Nombre");
+        /*var apellido = localStorage.getItem("Apellido");
+        /*Mostrar datos almacenados*/      
+        document.getElementById("nombre").innerHTML = nombre;
+        /*document.getElementById("apellido").innerHTML = apellido; */
+    });   
+});
+   </script>
+    <span class="help-block" id="error"></span>
+        <button id="boton-actualizar" type="submit" name="btn" class="btn btn-info">ACTUALIZAR</button>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
