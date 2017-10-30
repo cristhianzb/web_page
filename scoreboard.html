@@ -5,7 +5,7 @@
     <title>Scoreboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -23,14 +23,14 @@
     </nav>
     <h1>Lista de puntajes</h1>
     <p>Selecione uno de los registros, para continuar el juego</p>
- 
+
       <table class="table">
                 <thead>
                     <tr>
                        <th>Personaje</th>
                        <th>Nickname</th>
                         <th>Score</th>
-                       
+
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +39,7 @@
                             Personaje#1
                         </td>
                         <td id="nickname1">
-                            Nickname"1  
+                            Nickname"1
                         </td>
                         <td>
                            Puntos
@@ -61,7 +61,7 @@
                             Personaje#3
                         </td>
                         <td>
-                            Nickname#3 
+                            Nickname#3
                         </td>
                         <td>
                             Puntos
@@ -72,7 +72,7 @@
                             Personaje#4
                         </td>
                         <td>
-                           Nickname#4 
+                           Nickname#4
                         </td>
                         <td>
                            Puntos
@@ -83,7 +83,7 @@
                             Personaje#5
                         </td>
                         <td>
-                            Nickname#5 
+                            Nickname#5
                         </td>
                         <td>
                             Puntos
@@ -94,7 +94,7 @@
                            Personaje#6
                         </td>
                         <td>
-                            Nickname#6 
+                            Nickname#6
                         </td>
                         <td>
                             Puntos
@@ -113,22 +113,22 @@
                     </tr>
                 </tbody>
                  <tr>
-       
+
       </tr>
             </table>
-     
-    
+
+
    <script>
      /*Funcion Cargar y Mostrar datos*/
-$(document).ready(function(){    
-    $('#boton-actualizar').click(function(){                       
+$(document).ready(function(){
+    $('#boton-actualizar').click(function(){
         /*Obtener datos almacenados*/
         var nombre = localStorage.getItem("Nombre");
         /*var apellido = localStorage.getItem("Apellido");
-        /*Mostrar datos almacenados*/      
+        /*Mostrar datos almacenados*/
         document.getElementById("nombre").innerHTML = nombre;
         /*document.getElementById("apellido").innerHTML = apellido; */
-    });   
+    });
 });
    </script>
     <span class="help-block" id="error"></span>

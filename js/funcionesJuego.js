@@ -1,5 +1,5 @@
 //funciones de la pagina Game
-setNivel();
+setNick("nick");
 var inst =[1,1,2,2,1];
 var m1 = copiarMatriz(nivel4);
 var m2 = copiarMatriz(monedas_nivel4);
@@ -20,6 +20,7 @@ function mover() {
   }else{
     clearInterval(inter);
     console.log("detenido");
+    setNivel(1);
   }
 }
 
@@ -35,8 +36,7 @@ function detenerSetInterval(){
   clearInterval(inter);
 }
 
-function setNivel(){
-  var ni = 0;
+function setNivel(ni){
   var cadena = "Nivel:"+ni;
   $("#nivel").html(cadena);
 }
@@ -45,6 +45,11 @@ function setPuntaje(ini){
   var ni = ini + lab.puntaje;
   var cadena = "Puntaje:"+ni;
   $("#puntaje").html(cadena);
+}
+
+function setNick(nick){
+  var cadena = "Nickname:"+nick;
+  $("#nick").html(cadena);
 }
 
 
