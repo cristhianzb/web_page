@@ -23,26 +23,37 @@
     </div>
   </nav>
 
+  <div class="row">
+      <h3 class="col-md-4" id="nick">Nickname:</h3>
+      <h3 class="col-md-4" id="nivel">Nivel:</h3>
+      <h3 class="col-md-4" id="puntaje">Puntaje:</h3>
+  </div>
 
-  <h3 id="nick">Nickname:</h3>
-  <h3 id="nivel">Nivel:</h3>
-  <h3 id="puntaje">Puntaje:</h3>
-  <div>
+  <div class="container-fluid">
     <form action="#">
 	     <fieldset>
-    	     <legend> Instrucciones </legend>
-    	     <label for="instrucciones">Indique las instrucciones</label><br>
-      		<input type="text" id="instrucciones" readonly="readonly"><br>
+        <div class="row">
+            <legend> Instrucciones </legend>
+            <div class="col-md-6">
+              <label for="instrucciones">Indique las instrucciones</label><br>
+             <input type="text" id="instrucciones" readonly="readonly"><br>
+            </div>
+            <div class="col-md-6">
 
-          <button id="b_arriba"onclick="agregarArriba()"type="button" name="n_arriba"><img src="resources/img/flecha2.png" alt="arriba" style="-webkit-transform: rotate(-90deg);-moz-transform: rotate(-90deg);"></button>
-          <button id="b_abajo" onclick="agregarAbajo()" type="button" name="n_abajo"><img src="resources/img/flecha2.png" alt="abajo" style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);"></button>
-          <button id="b_izq" onclick="agregarIzq()" type="button" name="n_izquierda"><img src="resources/img/flecha2.png" alt="izquierda" style="-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);"></button>
-          <button id="b_der" onclick="agregarDer()" type="button" name="n_derecha"><img src="resources/img/flecha2.png" alt="derecha"></button>
-          <button onclick="borrarInst()"type="button" name="n_borrar">Borrar</button>
-          <br>
-          <button type="button" name="bplay" onclick="play()">Play</button>
-          <button type="button" name="bstop" onclick="detenerSetInterval()">Stop</button>
-          <button onClick="terminarJuego()" type="button" name="bterminar">Terminar</button>
+              <button id="b_arriba"onclick="agregarArriba()"type="button" name="n_arriba"><img src="resources/img/flecha2.png" alt="arriba" style="-webkit-transform: rotate(-90deg);-moz-transform: rotate(-90deg);"></button>
+              <button id="b_abajo" onclick="agregarAbajo()" type="button" name="n_abajo"><img src="resources/img/flecha2.png" alt="abajo" style="-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);"></button>
+              <button id="b_izq" onclick="agregarIzq()" type="button" name="n_izquierda"><img src="resources/img/flecha2.png" alt="izquierda" style="-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);"></button>
+              <button id="b_der" onclick="agregarDer()" type="button" name="n_derecha"><img src="resources/img/flecha2.png" alt="derecha"></button>
+              <button onclick="borrarInst()"type="button" name="n_borrar">Borrar</button>
+              <br>
+            </div>
+        </div>
+        <button type="button" name="bplay" onclick="play()">Play</button>
+        <button type="button" name="bstop" onclick="detenerSetInterval()">Stop</button>
+        <button onClick="terminarJuego()" type="button" name="bterminar">Terminar</button>
+
+
+
       </fieldset>
     </form>
   </div>
